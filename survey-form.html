@@ -8,19 +8,40 @@
 	<h1 id="title">Survey</h1>
 	<p id="description">This is a survey form written in html, functionally similar to <a href="https://survey-form.freecodecamp.rocks">this survey</a>.</p>
 	<form id="survey-form">
-		<label id="name-label" for="name">Enter your name here:</label> <input type="text" name="name" id="name" placeholder="e.g. John Doe" >
-		<label id="email-label" for="email">Enter your email here:</label> <input type="email" name="email" id="email" placeholder="e.g. john.doe@email-provider.com" >
-		<label id="number-label" for="number">Enter a number here:</label> <input type="number" name="number" id="number" min="1" max="10" placeholder="from 1-10">
-		<select>
-			<option></option>
-			<option></option>
+		<fieldset>
+		<label id="name-label" for="name">Enter your name here: <input type="text" name="name" id="name" placeholder="e.g. John Doe" required/></label>
+		<label id="email-label" for="email">Enter your email here: <input type="email" name="email" id="email" placeholder="e.g. john.doe@email-provider.com" required /></label>
+		<label id="number-label" for="number">Enter a number here: <input type="number" name="number" id="number" min="1" max="10" placeholder="from 1-10" /></label>
+		</fieldset>
+
+		<fieldset>
+        <label for="first-radio-option"><input id="first-radio-option" type="radio" name="radio-options" class="inline" value="reasearchType"/> Theoretical Physics</label>
+        <label for="second-radio-option"><input id="second-radio-option" type="radio" name="radio-options" class="inline" value="reasearchType"/> Experimental Physics</label>
+		</fieldset>
+
+		<fieldset>
+		<label for="checkbox-one"><input id="checkbox-one" type="checkbox" class="inline" value="researchField" /> High energy physics</label>
+		<label for="checkbox-two"><input id="checkbox-two" type="checkbox" class="inline" value="researchField" /> Soft matter physics</label>
+		<label for="checkbox-three"><input id="checkbox-three" type="checkbox" class="inline" value="researchField" /> Solid state physics</label>
+		<label for="checkbox-four"><input id="checkbox-four" type="checkbox" class="inline" value="researchField" /> Statistical physics</label>
+      	</fieldset>
+
+		<select id="dropdown">
+			<option>Yes</option>
+			<option>No</option>
 		</select>
 
-		<label id="submit-label" for="submit">Submit</label> <input type="element" id="submit">
+      	<fieldset>
+      		<label for="comments">Please let us know of any further comments: </label>
+      		<textarea id="comments" name="comments" placeholder="I'm not actually a physicist but..."></textarea>
+      	</fieldset>
+
+      	<fieldset>	
+		<button type="submit" id="submit">Submit<button/>
+      	</fieldset>
 	</form>
 </body>
 
-    Inside the form element, you can select an option from a group of at least two radio buttons that are grouped using the name attribute
-    Inside the form element, you can select several fields from a series of checkboxes, each of which must have a value attribute
-    Inside the form element, you are presented with a textarea for additional comments
-    Inside the form element, you are presented with a button with id of submit to submit all the inputs
+Failed: You should have a select field with an id of dropdown.
+Failed: Your #dropdown should have at least two selectable (not disabled) option elements.
+Failed: Your #dropdown should be a descendant of #survey-form.
